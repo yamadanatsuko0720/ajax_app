@@ -10,8 +10,8 @@ class PostsController < ApplicationController
     redirect_to action: :index
   end
 
+
   def checked
-    # 既読の操作を行ったときに実行されるアクション/4651
     post = Post.find(params[:id])
     if post.checked 
       post.update(checked: false)
@@ -22,6 +22,7 @@ class PostsController < ApplicationController
     item = Post.find(params[:id])
     render json: { post: item }
   end
+  # 既読の操作を行ったときに実行されるアクション/4651
 
 end
 
